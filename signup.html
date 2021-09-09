@@ -1,0 +1,85 @@
+<html>
+<head>
+	<title>signup page</title>
+	<link rel="stylesheet" type="text/css" href="signup.css">
+</head>
+
+<body>
+<header>
+	<nav>
+		<div class="logo"><h1> Munna Traveller</h1></div>
+
+		<div class="menu">
+				<a href="index.html">Home</a>
+				<a href="about.html">About us</a>
+				<a href="contact.html">Contact</a>
+				<a href="images.html">Images</a>
+		</div>
+	</nav>
+
+	<div class="back">
+			<a href="index.html"><input type="button" value="back" style="width:100px;height: 30px"></a>
+		</div>
+
+		<script>
+
+	function validate()
+			{
+				
+				var name=document.getElementById("name").value;
+				var n= /^[A-Za-z\s]+$/;
+				var mob=document.getElementById("mob").value;
+				var m= /^[0-9]{10}$/;
+				var email=document.getElementById("email").value;
+				var e= /^([A-Za-z0-9\.\_])+\@(([A-za-z0-9\_]+\.)+([A-Za-z]{2,3}))$/;
+				var pass1=document.getElementById("pass1").value;
+				var pass2=document.getElementById("pass2").value;
+				var p= /^[A-Za-z0-9]{6,8}$/;
+				if(!name.match(n))
+				{
+					alert('Enter valid name');
+					return false;
+				}
+				
+				else if(!mob.match(m))
+				{
+					alert('Invalid mobile number');
+					return false;
+				}
+				else if(!email.match(e))
+				{
+					alert('Enter valid email');
+					return false;
+				}
+				else if(!pass1.match(p))
+				{
+					alert('Enter valid password...password must be 6-8 aplhabets or digits');
+					return false;
+				}
+				else 
+				{
+					return true;
+				}		
+			}
+		</script>
+</header>
+
+<body>
+		<div class="box">
+			<form name="register" method="POST" onsubmit="return validate()">
+			<center><table border="0" cellpadding="10px">
+				<tr><td><input type="text" name="name" id="name" placeholder=" Enter Name" ></td></tr>
+				<tr><td ><input type="tel" name="number" id="mob" placeholder="Enter Mobile Number"></td></tr>
+				<tr><td><input type="email" name="email" id="email" placeholder="Enter Email"  ></td></tr>
+				<tr><td><input type="password" name="pass1" id="pass1" placeholder="Create New Password" ></td></tr>
+				<tr><td><input type="password" name="pass2" id="pass2" placeholder="Confirm New Password"  ></td></tr>
+				<tr><td ><center><input type="submit" name="submit" value="sign up"  background-color:gray; color:white;"></center></td></tr>
+			 </table></center></form> 
+		</div>
+</body>
+<footer>&copy:2021 by Munna travellers</footer>
+</html>
+
+
+
+
